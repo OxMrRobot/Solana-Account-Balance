@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethereum Account Balance</title>
+</head>
+<body>
+    <h1>Ethereum Account Balance</h1>
+    <div id="balance"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.3.6/dist/web3.min.js"></script>
+    <script>
+        const web3 = new Web3(new Web3.providers.HttpProvider("API_ETH_MAINNET"));
+
+        async function getBalance() {
+            const address = "0x95222290dd7278aa3ddd389cc1e1d165cc4bafe5";
+            const balance = await web3.eth.getBalance(address);
+            const balanceEth = web3.utils.fromWei(balance, 'ether');
+            document.getElementById("balance").innerText = "Balance: " + balanceEth + " ETH";
+        }
+
+        getBalance();
+    </script>
+</body>
+</html>
+
+
+
