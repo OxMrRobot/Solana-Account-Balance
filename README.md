@@ -6,7 +6,7 @@ This project is a simple example of retrieving and displaying the balance of a S
 
 1. **Clone the Project**: Clone this repository to your local machine using the following command:
    ```
-   git clone https://github.com/OxMrRobot/Solana-Account-Balance.git
+   git clone https://github.com/OxMrRobot/Solana-Ethereum-Account-Balance.git
    ```
 
 2. **Open the HTML File**: Open the `index.html` file in your preferred text editor.
