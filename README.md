@@ -1,4 +1,4 @@
-# Solana Account Balance
+# Solana/Ethereum Account Balance
 
 This project is a simple example of retrieving and displaying the balance of a Solana account using Solana's JSON-RPC API.
 
