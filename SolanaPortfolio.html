@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Solana Portfolio</title>
+</head>
+<body>
+    <h1>Get Solana Portfolio</h1>
+    <div id="portfolio"></div>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script>
+        async function fetchPortfolio() {
+            try {
+                await Moralis.start({
+                    apiKey: "YOUR_API_KEY", // Remplacez "YOUR_API_KEY" par votre propre clé API
+                });
+
+                const response = await Moralis.SolApi.account.getPortfolio({
+                    "network": "mainnet",
+                    "address": "PUBLIC_KEY" // Remplacez "PUBLIC_KEY" par la clé publique du compte
+                });
+
+                const portfolioElement = document.getElementById("portfolio");
+                portfolioElement.innerHTML = `<pre>${JSON.stringify(response.raw, null, 2)}</pre>`;
+            } catch (error) {
+                console.error(error);
+                const portfolioElement = document.getElementById("portfolio");
+                portfolioElement.innerText = "Erreur lors de la récupération du portefeuille Solana.";
+            }
+        }
+
+        fetchPortfolio();
+    </script>
+</body>
+</html>
+
